@@ -92,10 +92,3 @@ Contribuições são sempre bem-vindas! Siga os passos abaixo:
 [E-mail](mailto:seuemail@example.com)
 
 ---
-
-## 🏷️ Licença
-
-Este projeto está sob a licença MIT.
-
----
-
