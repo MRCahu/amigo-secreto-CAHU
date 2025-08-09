@@ -29,7 +29,7 @@ O Amigo Secreto CAHU é uma aplicação web que permite:
 
 ## 🚀 Demo
 
-- 🔗 Acesse a demo ao vivo: INSIRA_AQUI_O_LINK_DA_DEMO
+- 🔗 Acesse a demo ao vivo: [INSIRA_AQUI_O_LINK_DA_DEMO](https://mrcahu.github.io/amigo-secreto-CAHU)
 
 Para habilitar: vá em Settings → Pages no GitHub e configure a branch main como fonte.
 
