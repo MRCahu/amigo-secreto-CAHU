@@ -1,27 +1,58 @@
-<main>
-  <h1>Amigo Secreto</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amigo Secreto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="container">
+    <h1 class="title" aria-label="Amigo Secreto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12h-2V8a6 6 0 10-12 0v4H4l-1 10h18l-1-10zm-6 0h-4V8a4 4 0 118 0v4z"/></svg>
+      <span>Amigo Secreto</span>
+    </h1>
+    <p class="subtitle">Cadastre participantes, valide entradas e realize o sorteio de forma acessível e persistente.</p>
+  </header>
 
-  <section aria-labelledby="participantes-title">
-    <h2 id="participantes-title">Participantes</h2>
+  <main class="grid container">
+    <section class="card" aria-labelledby="participantes-title">
+      <h2 id="participantes-title">Participantes</h2>
 
-    <div class="row">
-      <label for="name">Nome</label>
-      <input id="name" name="name" autocomplete="off" placeholder="Digite um nome" />
-      <button id="add" type="button">Adicionar</button>
-    </div>
+      <div class="row">
+        <div>
+          <label for="name">Nome</label>
+          <input id="name" name="name" autocomplete="off" placeholder="Digite um nome" />
+        </div>
+        <button id="add" type="button">Adicionar</button>
+        <button id="clear" class="btn-secondary" type="button" title="Limpar todos">Limpar</button>
+      </div>
 
-    <ul id="list" aria-label="Lista de participantes"></ul>
-  </section>
+      <ul id="list" aria-label="Lista de participantes"></ul>
+      <p id="emptyList" class="empty" hidden>Nenhum participante adicionado ainda.</p>
 
-  <section aria-labelledby="sorteio-title">
-    <h2 id="sorteio-title">Sorteio</h2>
-    <button id="draw" type="button" disabled>Sortear</button>
-    <ul id="pairs" aria-label="Resultado do sorteio"></ul>
-  </section>
+      <div class="toolbar">
+        <small class="muted">Dica: pressione Enter no campo para adicionar.</small>
+      </div>
 
-  <!-- Área de mensagens acessível -->
-  <div id="alert" class="alert" tabindex="-1" aria-live="polite"></div>
-</main>
+      <div id="alert" class="alert" tabindex="-1" aria-live="polite"></div>
+    </section>
 
-<!-- Inclua seu app.js ao final do body -->
-<script src="app.js" type="module"></script>
+    <section class="card" aria-labelledby="sorteio-title">
+      <h2 id="sorteio-title">Sorteio</h2>
+      <div class="toolbar">
+        <button id="draw" type="button" disabled>Sortear</button>
+        <button id="resetPairs" class="btn-secondary" type="button">Limpar resultado</button>
+      </div>
+      <ul id="pairs" aria-label="Resultado do sorteio"></ul>
+      <p id="emptyPairs" class="empty" hidden>Nenhum sorteio realizado.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>Feito com boas práticas de Acessibilidade (WCAG AA) e persistência em localStorage.</small>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
