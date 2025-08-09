@@ -1,3 +1,5 @@
+<img width="1220" height="573" alt="image" src="https://github.com/user-attachments/assets/2cfcc91a-995d-4b28-9904-36182df54189" />
+
 # 🎁 Amigo Secreto (CAHU)
 
 > Aplicação web moderna para gerenciar participantes e realizar sorteio de Amigo Secreto com validações robustas, persistência local e acessibilidade aprimorada.
@@ -11,11 +13,6 @@
 - [✅ Critérios de Aceitação](#-critérios-de-aceitação)
 - [♿ Acessibilidade](#-acessibilidade-a11y)
 - [🔧 Como Rodar Localmente](#-como-rodar-localmente)
-- [📁 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🛣️ Roadmap](#️-roadmap)
-- [📊 Changelog](#-changelog)
-- [🔒 Privacidade e Dados](#-privacidade-e-dados)
-- [❓ FAQ](#-perguntas-frequentes-faq)
 
 ## 🎯 Visão Geral
 
