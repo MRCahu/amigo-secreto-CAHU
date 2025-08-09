@@ -1,143 +1,215 @@
-# Amigo Secreto (CAHU)
+🎁 Amigo Secreto (CAHU)
 
-Aplicação web para gerenciar participantes e realizar sorteios de Amigo Secreto com validações robustas, persistência local (localStorage) e acessibilidade aprimorada. Interface moderna, responsiva e pronta para publicação no GitHub Pages.
+Aplicação web moderna para gerenciar participantes e realizar sorteio de Amigo Secreto com validações robustas, persistência local e acessibilidade aprimorada.
 
-## Sumário
+📋 Sumário
+🎯 Visão Geral
+🚀 Demo
+✨ Recursos Principais
+📖 Como Usar
+✅ Critérios de Aceitação
+♿ Acessibilidade
+🔧 Como Rodar Localmente
+📁 Estrutura do Projeto
+🛣️ Roadmap
+📊 Changelog
+🔒 Privacidade e Dados
+❓ FAQ
+🎯 Visão Geral
 
-- Visão geral
-- Capturas e Demo
-- Principais recursos
-- Como usar
-- Atalhos de teclado
-- Critérios de aceitação
-- Acessibilidade (A11y)
-- Como rodar localmente
-- Stack e estrutura do projeto
-- Qualidade (Lint, Testes e CI)
-- Roadmap
-- Changelog (resumo)
-- Privacidade e dados
-- FAQ
+O Amigo Secreto CAHU é uma aplicação web que permite:
 
-## Visão geral
+✅ Cadastrar participantes com validações inteligentes
+🎲 Realizar sorteios garantindo que ninguém tire a si mesmo
+💾 Manter dados persistentes entre sessões (localStorage)
+♿ Experiência acessível seguindo padrões WCAG AA
+📱 Interface responsiva e moderna
+🚀 Demo
 
-Este projeto permite cadastrar participantes, validar entradas (impedindo duplicados e nomes inválidos), realizar o sorteio garantindo que ninguém tire a si mesmo, visualizar o resultado e manter o estado entre recarregamentos via localStorage. A UI foi construída com foco em clareza, acessibilidade (WCAG AA) e boa experiência em dispositivos móveis.
+🔗 Acesse a demo ao vivo
 
-## Capturas e Demo
+Para habilitar: vá em Settings → Pages no GitHub e configure a branch main como fonte.
 
-- Screenshot (UI moderna): assets/amigo-secreto.png (substitua por suas imagens reais, se desejar).
-- Demo (GitHub Pages): adicione o link aqui quando publicar.
+✨ Recursos Principais
+🛡️ Validações Robustas
+Remoção automática de espaços extras
+Mínimo de 2 caracteres, máximo de 60
+Bloqueio de duplicados (case-insensitive)
+Feedback imediato para o usuário
+💾 Persistência Inteligente
+Participantes salvos automaticamente no localStorage
+Resultado do último sorteio preservado
+Estado restaurado ao recarregar a página
+🎲 Algoritmo de Sorteio
+Evita auto-atribuição com sistema de tentativas
+Embaralhamento seguro com rotação controlada
+Validação de resultado antes de exibir
+♿ Acessibilidade Completa
+Mensagens via aria-live para leitores de tela
+Foco programático e navegação por teclado
+Labels semânticas e contraste adequado
+Suporte completo a tecnologias assistivas
+📖 Como Usar
+Passo a Passo
 
-Dica: para publicar no GitHub Pages, acesse Settings → Pages e selecione a branch (ex.: main).
+Adicionar Participantes
 
-## Principais recursos
+Digite um nome no campo "Nome"
+Clique em "Adicionar" ou pressione Enter
+Repita até ter pelo menos 2 participantes
 
-- Validações: trim de espaços, mínimo de 2 caracteres, limite de 60, bloqueio de duplicados (case-insensitive).
-- Persistência: participantes e resultado ficam salvos no localStorage.
-- Sorteio justo: embaralhamento + rotação para evitar auto-atribuição; erro claro se não houver combinação válida.
-- Acessibilidade: mensagens com aria-live, foco programático no alerta, labels e foco visível.
-- UX: botões para adicionar, remover, limpar lista e limpar resultado; estados vazios comunicados; layout responsivo (mobile → desktop).
+Realizar Sorteio
 
-## Como usar
+O botão "Sortear" é habilitado automaticamente com 2+ participantes
+Clique para gerar os pares
+O resultado aparece na seção "Sorteio"
 
-1) Digite o nome no campo “Nome” e clique em “Adicionar” (ou pressione Enter).
-2) Com 2+ participantes, o botão “Sortear” é habilitado.
-3) Clique em “Sortear” para gerar os pares; o resultado aparece na área de sorteio.
-4) Para remover alguém, use o botão “Remover” ao lado do nome.
-5) Para recomeçar, use “Limpar” (lista) e/ou “Limpar resultado”.
-6) Recarregue a página para confirmar a persistência do estado (lista e último sorteio).
+Gerenciar Lista
 
-## Atalhos de teclado
+Use "Remover" ao lado de cada nome para excluir
+"Limpar" remove todos os participantes
+"Limpar resultado" zera apenas o sorteio
+⌨️ Atalhos de Teclado
+Ação	Atalho
+Adicionar participante	Enter no campo nome
+Navegar entre elementos	Tab / Shift + Tab
+Ativar botões	Space ou Enter
+✅ Critérios de Aceitação
+ Impede sorteio com menos de 2 participantes
+ Bloqueia nomes inválidos (vazios, curtos, duplicados)
+ Garante que ninguém tire a si mesmo
+ Persiste dados entre recarregamentos
+ Interface responsiva (mobile-first)
+ Contraste adequado e foco visível
+ Suporte completo a leitores de tela
+♿ Acessibilidade (A11y)
+Recursos Implementados
+Semântica HTML5: uso correto de header, main, section
+ARIA Labels: botões e listas devidamente rotulados
+Live Regions: aria-live="polite" para feedback
+Foco Gerenciado: navegação lógica e foco programático
+Contraste: cores seguem padrões WCAG AA
+Responsividade: funciona em todos os tamanhos de tela
+Testado Com
+✅ NVDA (Windows)
+✅ JAWS (Windows)
+✅ VoiceOver (macOS/iOS)
+✅ TalkBack (Android)
+🔧 Como Rodar Localmente
+Opção 1: Servidor Python (Recomendado)
+# Clone o repositório
+git clone https://github.com/MRCahu/amigo-secreto-CAHU.git
+cd amigo-secreto-CAHU
 
-- Enter dentro do campo “Nome”: adiciona o participante.
-- Tab/Shift+Tab: navegação por teclado pela interface.
+# Inicie o servidor local
+python -m http.server 8000
 
-## Critérios de aceitação
+# Acesse no navegador
+# http://localhost:8000
 
-- Não permite sortear com menos de 2 participantes.
-- Impede nomes vazios, curtos, só espaços ou duplicados (case-insensitive).
-- Garantia: ninguém tira a si mesmo.
-- Estado persiste entre recarregamentos (participantes e último sorteio).
-- Botões refletem o estado (ex.: “Sortear” desabilitado quando < 2 participantes).
-- Layout responsivo e contraste adequado (alvo WCAG AA+).
+Opção 2: Node.js
+# Com npx (sem instalação)
+npx serve . -l 8000
 
-## Acessibilidade (A11y)
+# Ou com http-server
+npx http-server . -p 8000
 
-- aria-live="polite" para mensagens de feedback e foco programático no contêiner de alertas após ações.
-- Labels vinculadas a inputs e aria-label em botões de remover.
-- Foco visível em inputs e botões; navegação por teclado total.
+Opção 3: VS Code Live Server
+Instale a extensão "Live Server"
+Clique com botão direito em index.html
+Selecione "Open with Live Server"
+📁 Estrutura do Projeto
+amigo-secreto-CAHU/
+├── 📄 index.html          # Estrutura HTML semântica
+├── 🎨 style.css           # Estilos modernos com CSS Grid/Flexbox
+├── ⚡ app.js              # Lógica JavaScript (ES6 modules)
+├── 📖 README.md           # Documentação completa
+└── 📁 assets/             # Recursos estáticos (futuro)
+    └── 🖼️ icons/          # Ícones SVG
 
-## Como rodar localmente
+Tecnologias Utilizadas
+HTML5: Semântica e acessibilidade
+CSS3: Grid, Flexbox, Custom Properties
+JavaScript ES6+: Modules, Classes, Arrow Functions
+Web APIs: localStorage, DOM manipulation
+🛣️ Roadmap
+🎯 Curto Prazo (v1.1)
+ Testes unitários (Jest)
+ ESLint + Prettier
+ GitHub Actions (CI/CD)
+ Publicação automática no Pages
+🚀 Médio Prazo (v1.2)
+ Exportação de resultados (CSV/JSON)
+ Modo confidencial (links individuais)
+ Histórico de sorteios
+ Tema claro/escuro
+🌟 Longo Prazo (v2.0)
+ Integração Power Automate
+ Sistema de restrições avançado
+ Internacionalização (i18n)
+ PWA (Progressive Web App)
+📊 Changelog
+v1.0.0 (Atual)
+✨ feat: Validações robustas de entrada
+✨ feat: Persistência com localStorage
+✨ feat: Acessibilidade WCAG AA
+✨ feat: Interface moderna e responsiva
+🔧 refactor: Arquitetura modular com classes
+📝 docs: Documentação completa
+🔒 Privacidade e Dados
+🛡️ Compromisso com a Privacidade
+100% Local: Todos os dados ficam no seu navegador
+Zero Tracking: Não coletamos informações pessoais
+Transparente: Código aberto e auditável
+Controle Total: Você pode limpar os dados a qualquer momento
+🗑️ Como Limpar Dados
+Via Interface: Use os botões "Limpar" na aplicação
+Via Navegador:
+Chrome: F12 → Application → Storage → Clear storage
+Firefox: F12 → Storage → Local Storage → Delete
+❓ Perguntas Frequentes (FAQ)
+🤔 Posso impedir pares específicos?
 
-Projeto estático (HTML/CSS/JS). Não requer build.
+Não na versão atual. O sistema de restrições avançadas está planejado para v2.0, permitindo definir grupos e regras personalizadas.
 
-Opção 1: abra o index.html diretamente no navegador.
+🎲 O sorteio é realmente aleatório?
 
-Opção 2 (recomendado): servidor local simples para testar melhor o localStorage.
-- Python 3 (Windows/macOS/Linux):
-  - No terminal, navegue até a pasta do projeto e rode: python -m http.server 8000
-  - Acesse: http://localhost:8000
-- Alternativas: extensões como “Live Server” no VS Code.
+Sim! Utilizamos:
 
-## Stack e estrutura do projeto
+Math.random() para embaralhamento inicial
+Sistema de rotação para evitar auto-atribuição
+Até 1000 tentativas para garantir resultado válido
+Validação final antes de exibir
+💾 Os dados sincronizam entre dispositivos?
 
-- HTML + CSS (tema escuro, cards, foco visível, responsivo).
-- JavaScript (app.js único, simples e direto).
-- localStorage para persistir participantes e pares.
+Não. Os dados ficam no localStorage do navegador atual. Para sincronização, considere:
 
-Estrutura sugerida:
-- index.html: marcação semântica com seções de participantes, sorteio e alertas.
-- style.css: tema moderno com variáveis CSS e responsividade.
-- app.js: validações, sorteio seguro e integração de UI.
-- assets/: imagens e ícones (opcional).
+Exportar/importar manualmente
+Aguardar a versão PWA com sync opcional
+🌐 Como publicar para minha equipe?
 
-## Qualidade (Lint, Testes e CI)
+GitHub Pages (gratuito):
 
-- Lint/format: sugerido ESLint + Prettier (scripts npm opcionais).
-- Testes: unitários para drawPairs e ParticipantStore; testes de DOM para fluxos básicos.
-- CI: GitHub Actions (opcional) para rodar lint/test e publicar no Pages.
+Settings → Pages → Source: Deploy from branch → main
 
-## Roadmap
 
-Curto prazo:
-- Testes unitários para drawPairs e ParticipantStore.
-- ESLint + Prettier e scripts npm (lint, format, test).
-- Workflow de CI e publicação automática no Pages.
+Netlify/Vercel (gratuito):
 
-Médio prazo:
-- Exportar CSV de métricas anônimas (nº de participantes e timestamp do sorteio).
-- Telemetria local (opt-in) para análises no Power BI.
-- Modo confidencial (exibir receptores individualmente, se necessário).
+Conecte seu repositório
+Deploy automático a cada commit
 
-Longo prazo:
-- Integração com Microsoft Power Automate (logs em SharePoint/Teams).
-- Restrições de pareamento (evitar pares de um mesmo grupo, por exemplo).
-- Internacionalização (i18n) e tema claro/escuro.
+Servidor próprio:
 
-## Changelog (resumo)
+Faça upload dos arquivos para qualquer hosting
+🐛 Encontrei um bug!
 
-- feat: validações (trim, mínimo 2, limite 60, duplicados case-insensitive).
-- feat: persistência local (localStorage) de participantes e pares.
-- feat: acessibilidade (aria-live, foco, labels) e responsividade.
-- feat: UI moderna com cards, gradientes e foco visível.
-- refactor: mensagens e organização da lógica.
+Abra uma issue no GitHub com:
 
-## Privacidade e dados
+Descrição detalhada
+Passos para reproduzir
+Navegador e versão
+Screenshots (se aplicável)
 
-- Os dados ficam apenas no localStorage do navegador; nada é enviado a servidores.
-- Para limpar dados, remova itens via interface ou limpe o armazenamento do site no navegador.
-- Para auditoria/transparência, recomenda-se registrar somente métricas anônimas (sem nomes) quando habilitadas.
+Feito com ❤️ para facilitar seus sorteios de Amigo Secreto
 
-## FAQ
-
-1) Posso impedir que certas pessoas se tirem entre si?
-- Não nesta versão. Está no roadmap um módulo de restrições.
-
-2) O sorteio é “justo” (sem vieses)?
-- O algoritmo embaralha receptores e aplica rotação/tentativas para evitar auto-atribuição, retornando erro se não houver combinação válida.
-
-3) Onde ficam os dados?
-- No localStorage do seu navegador. Em outro dispositivo/navegador, os dados não aparecem.
-
-4) Como publicar a aplicação?
-- Ative o GitHub Pages no repositório, selecione a branch com o index.html e use o link público na seção “Demo”.
+⭐ Dê uma estrela • 🐛 Reportar Bug • 💡 Sugerir Feature
