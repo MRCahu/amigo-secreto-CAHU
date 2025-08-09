@@ -1,8 +1,5 @@
 # 🎁 Amigo Secreto (CAHU)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Accessibility](https://img.shields.io/badge/a11y-WCAG%20AA-blue)](https://www.w3.org/WAI/WCAG21/quickref/)
-
 > Aplicação web moderna para gerenciar participantes e realizar sorteio de Amigo Secreto com validações robustas, persistência local e acessibilidade aprimorada.
 
 ## 📋 Sumário
@@ -22,82 +19,108 @@
 
 ## 🎯 Visão Geral
 
-O **Amigo Secreto CAHU** permite cadastrar participantes com validações inteligentes, realizar sorteios garantindo que ninguém tire a si mesmo, manter dados persistentes entre sessões (localStorage), oferecer experiência acessível (WCAG AA) e interface responsiva e moderna.
+O Amigo Secreto CAHU é uma aplicação web que permite:
+
+- ✅ Cadastrar participantes com validações inteligentes  
+- 🎲 Realizar sorteios garantindo que ninguém tire a si mesmo  
+- 💾 Manter dados persistentes entre sessões (localStorage)  
+- ♿ Experiência acessível seguindo padrões WCAG AA  
+- 📱 Interface responsiva e moderna
 
 ## 🚀 Demo
 
-- Após publicar no GitHub Pages, substitua pelo link da sua demo:
-  - Demo pública: INSIRA_AQUI_O_LINK_DA_DEMO
-- Alternativamente, utilize um servidor local (ver seção “Como Rodar Localmente”).
+- 🔗 Acesse a demo ao vivo: INSIRA_AQUI_O_LINK_DA_DEMO
+
+Para habilitar: vá em Settings → Pages no GitHub e configure a branch main como fonte.
 
 ## ✨ Recursos Principais
 
-### 🛡️ Validações robustas
-- Remoção automática de espaços extras.
-- Mínimo de 2 caracteres, máximo de 60.
-- Bloqueio de duplicados (case-insensitive).
-- Feedback imediato para o usuário.
+### 🛡️ Validações Robustas
+- Remoção automática de espaços extras  
+- Mínimo de 2 caracteres, máximo de 60  
+- Bloqueio de duplicados (case-insensitive)  
+- Feedback imediato para o usuário
 
-### 💾 Persistência inteligente
-- Participantes salvos automaticamente no localStorage.
-- Resultado do último sorteio preservado.
-- Estado restaurado ao recarregar a página.
+### 💾 Persistência Inteligente
+- Participantes salvos automaticamente no localStorage  
+- Resultado do último sorteio preservado  
+- Estado restaurado ao recarregar a página
 
-### 🎲 Algoritmo de sorteio
-- Evita auto-atribuição com sistema de tentativas e rotação.
-- Embaralhamento seguro (Fisher–Yates).
-- Validação de resultado antes de exibir.
+### 🎲 Algoritmo de Sorteio
+- Evita auto-atribuição com sistema de tentativas  
+- Embaralhamento seguro com rotação controlada  
+- Validação de resultado antes de exibir
 
-### ♿ Acessibilidade
-- Mensagens via `aria-live` para leitores de tela.
-- Foco programático e navegação por teclado.
-- Labels semânticas e contraste adequado.
+### ♿ Acessibilidade Completa
+- Mensagens via aria-live para leitores de tela  
+- Foco programático e navegação por teclado  
+- Labels semânticas e contraste adequado  
+- Suporte completo a tecnologias assistivas
 
 ## 📖 Como Usar
 
-1) Adicione nomes no campo “Nome” e clique em “Adicionar” (ou pressione Enter).  
-2) Após incluir ao menos 2 participantes, o botão “Sortear” é habilitado.  
-3) Clique em “Sortear” para gerar os pares; o resultado aparecerá na seção de sorteio.  
-4) Use o botão “Remover” ao lado de um nome para excluí-lo; isso zera o resultado do sorteio.  
-5) Recarregue a página: a lista e o último sorteio serão restaurados automaticamente.
+### Passo a Passo
 
-Atalhos de teclado:
-- Enter no campo de nome: adiciona participante.
-- Tab/Shift+Tab: navegação entre elementos.
-- Space/Enter: ativa botões focados.
+1) Adicionar Participantes  
+- Digite um nome no campo "Nome"  
+- Clique em "Adicionar" ou pressione Enter  
+- Repita até ter pelo menos 2 participantes
+
+2) Realizar Sorteio  
+- O botão "Sortear" é habilitado automaticamente com 2+ participantes  
+- Clique para gerar os pares  
+- O resultado aparece na seção "Sorteio"
+
+3) Gerenciar Lista  
+- Use "Remover" ao lado de cada nome para excluir  
+- "Limpar" remove todos os participantes  
+- "Limpar resultado" zera apenas o sorteio
+
+### ⌨️ Atalhos de Teclado
+
+| Ação                     | Atalho                     |
+|--------------------------|----------------------------|
+| Adicionar participante   | Enter no campo nome        |
+| Navegar entre elementos  | Tab / Shift + Tab          |
+| Ativar botões            | Space ou Enter             |
 
 ## ✅ Critérios de Aceitação
 
-- Impede sortear com menos de 2 participantes.
-- Bloqueia nomes inválidos: vazios, muito curtos, só espaços, duplicados (case-insensitive).
-- Garante que ninguém tire a si mesmo.
-- Persiste dados entre recarregamentos (participantes e último sorteio).
-- Botão “Sortear” habilita/desabilita corretamente conforme a lista.
-- Leiaute responsivo e contraste adequado (foco visível; alvo WCAG AA+).
+- Impede sorteio com menos de 2 participantes  
+- Bloqueia nomes inválidos (vazios, curtos, duplicados)  
+- Garante que ninguém tire a si mesmo  
+- Persiste dados entre recarregamentos  
+- Interface responsiva (mobile-first)  
+- Contraste adequado e foco visível  
+- Suporte completo a leitores de tela
 
 ## ♿ Acessibilidade (A11y)
 
-- `aria-live="polite"` para mensagens de feedback e foco programático no contêiner de alertas após ações relevantes.
-- Labels vinculadas a inputs e `aria-label` nos botões de remover.
-- Foco visível em botões e inputs; navegação por teclado suportada.
+### Recursos Implementados
+- Semântica HTML5: uso correto de header, main, section  
+- ARIA Labels: botões e listas devidamente rotulados  
+- Live Regions: aria-live="polite" para feedback  
+- Foco Gerenciado: navegação lógica e foco programático  
+- Contraste: cores seguem padrões WCAG AA  
+- Responsividade: funciona em todos os tamanhos de tela
 
-Testado com: NVDA/JAWS (Windows), VoiceOver (macOS/iOS) e TalkBack (Android).
+### Testado Com
+- ✅ NVDA (Windows)  
+- ✅ JAWS (Windows)  
+- ✅ VoiceOver (macOS/iOS)  
+- ✅ TalkBack (Android)
 
 ## 🔧 Como Rodar Localmente
 
-Projeto estático (HTML/CSS/JS), sem build obrigatório.
-
-Opção 1: abrir o `index.html` diretamente no navegador.
-
-Opção 2: servidor local simples (recomendado para testar localStorage e rotas):
+### Opção 1: Servidor Python (Recomendado)
 
 ```bash
 # Clone o repositório
 git clone https://github.com/MRCahu/amigo-secreto-CAHU.git
 cd amigo-secreto-CAHU
 
-# Iniciar com Python 3 (Windows/macOS/Linux)
+# Inicie o servidor local
 python -m http.server 8000
 
-# Acesse no navegador:
+# Acesse no navegador
 # http://localhost:8000
